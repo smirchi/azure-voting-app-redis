@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aksairflowtest-d7d5"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aksairflowtest-d7d5"
+  template:
+    metadata:
+      labels:
+        app: "aksairflowtest-d7d5"
+    spec:
+      containers:
+        - name: "aksairflowtest-d7d5"
+          image: "apacheairflow.azurecr.io/aksairflowtest"
+          ports:
+          - containerPort: 80
